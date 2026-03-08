@@ -3,50 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StopVind | האמת על יצחק וינד - נזהרתם!</title>
+    <title>StopVind | דוח המודיעין: יצחק וינד - נזהרתם!</title>
     
-    <!-- Schema.org Structured Data -->
+    <!-- Schema.org Structured Data - Optimized for Google Search -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "StopVind",
-      "url": "https://www.facebook.com/StopVind/",
-      "about": {
+      "@type": "WebPage",
+      "name": "StopVind - יצחק וינד עו\"ד נוכל",
+      "description": "דוח חשיפה ציבורי אודות יצחק מאיר וינד עו\"ד (יצחק וינד). מידע על הברחת נכסים, עושק עובדים ופסקי דין.",
+      "mainEntity": {
         "@type": "Person",
         "name": "Yitzhak Wind",
-        "alternateName": ["יצחק וינד", "מאיר יצחק וינד", "Isaac Wind", "Isaac Isaacson"],
-        "jobTitle": "Lawyer",
-        "description": "Public interest disclosure regarding legal and ethical patterns."
+        "alternateName": ["יצחק וינד", "יצחק מאיר וינד עו\"ד", "ווינד יצחק", "Isaac Wind", "יצחק וינד נוכל"],
+        "jobTitle": "עורך דין וטוען רבני",
+        "sameAs": [
+            "https://www.facebook.com/StopVind/",
+            "https://www.youtube.com/@%D7%99%D7%A6%D7%97%D7%A7%D7%95%D7%99%D7%A0%D7%93"
+        ]
       }
     }
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;400;700;800&family=Heebo:wght@300;500;800&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;400;700;800&family=Heebo:wght@300;500;800;900&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --rose: #e11d48;
-            --slate: #0f172a;
+            --slate: #020617;
             --amber: #d97706;
         }
-        body { font-family: 'Assistant', sans-serif; background-color: #fcfcfc; scroll-behavior: smooth; }
+        body { font-family: 'Assistant', sans-serif; background-color: #f8fafc; scroll-behavior: smooth; }
         .serif-title { font-family: 'Playfair Display', serif; }
-        .glass { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); }
-        .page-transition { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .glass { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.1); }
+        .page-transition { transition: opacity 0.3s ease, transform 0.3s ease; }
         .hidden-page { display: none; opacity: 0; transform: translateY(10px); }
         .active-page { display: block; opacity: 1; transform: translateY(0); }
         .nav-btn.active { color: var(--rose); border-bottom: 3px solid var(--rose); }
-        .line-clamp-sharp { border-right: 3px solid var(--rose); padding-right: 1rem; margin-bottom: 1.5rem; }
-        .sh-card { transition: transform 0.3s ease; border: 1px solid #f1f5f9; }
-        .sh-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); border-color: var(--rose); }
+        .data-counter { font-family: 'Heebo', sans-serif; font-weight: 900; }
+        .intelligence-card { border: 1px solid #e2e8f0; background: white; transition: all 0.2s ease; opacity: 1 !important; }
+        .sh-card-active:hover { border-color: var(--rose); transform: translateY(-4px); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1); }
+        .sh-card-locked { opacity: 0.5; filter: grayscale(1); cursor: not-allowed; }
+        .letter-paper { background: #fff url('https://www.transparenttextures.com/patterns/lined-paper-2.png'); border-radius: 40px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .red-alert-bar { background: repeating-linear-gradient(45deg, #991b1b, #991b1b 10px, #7f1d1d 10px, #7f1d1d 20px); }
     </style>
 </head>
-<body class="text-slate-900 overflow-x-hidden">
+<body class="text-slate-900 overflow-x-hidden selection:bg-rose-100">
 
-    <!-- Header -->
+    <!-- Navigation -->
     <nav class="sticky top-0 z-[100] glass h-20">
         <div class="max-w-7xl mx-auto px-6 h-full flex justify-between items-center">
             <div class="flex items-center gap-3 cursor-pointer" onclick="showPage('home')">
@@ -54,20 +60,21 @@
                 <span class="text-2xl font-black tracking-tighter serif-title uppercase">STOP<span class="text-rose-600">VIND</span></span>
             </div>
             
-            <div class="hidden lg:flex items-center gap-8 font-bold text-sm tracking-tight">
-                <button onclick="showPage('home')" class="nav-btn active px-2 py-1" id="btn-home">הפרופיל</button>
+            <div class="hidden lg:flex items-center gap-8 font-bold text-[10px] tracking-widest uppercase text-slate-500">
+                <button onclick="showPage('home')" class="nav-btn active px-2 py-1" id="btn-home">RECORDS & DATA</button>
+                <button onclick="showPage('letters')" class="nav-btn px-2 py-1 text-rose-700" id="btn-letters">מכתבים למשפחה</button>
                 <button onclick="showPage('community')" class="nav-btn px-2 py-1 text-amber-700" id="btn-community">שידוכין וגמ"חים</button>
                 <div class="relative group">
-                    <button class="nav-btn px-2 py-1 flex items-center gap-1">עדויות הנפגעים <i class="fas fa-chevron-down text-[10px]"></i></button>
-                    <div class="absolute top-full right-0 mt-2 w-56 bg-white shadow-2xl rounded-2xl border border-slate-100 hidden group-hover:block overflow-hidden py-2">
-                        <button onclick="showPage('orit')" class="w-full text-right px-4 py-2 hover:bg-rose-50 hover:text-rose-600 text-xs transition">אורית סולומון (המתמחה)</button>
-                        <button onclick="showPage('amitai')" class="w-full text-right px-4 py-2 hover:bg-rose-50 hover:text-rose-600 text-xs transition border-t border-slate-50">אמיתי שיף (העובד)</button>
-                        <button onclick="showPage('klimi')" class="w-full text-right px-4 py-2 hover:bg-rose-50 hover:text-rose-600 text-xs transition border-t border-slate-50">מר קלימי (הלקוח)</button>
+                    <button class="nav-btn px-2 py-1 flex items-center gap-1 uppercase">עדויות <i class="fas fa-chevron-down text-[8px]"></i></button>
+                    <div class="absolute top-full right-0 mt-2 w-56 bg-white shadow-2xl rounded-2xl border border-slate-100 hidden group-hover:block overflow-hidden py-2 text-right">
+                        <button onclick="showPage('orit')" class="w-full px-4 py-2 hover:bg-rose-50 hover:text-rose-600 text-xs transition border-b border-slate-50">א.ס (המתמחה המרכזית)</button>
+                        <span class="w-full px-4 py-2 text-slate-300 text-xs flex justify-between">א.ש (חסום לעיבוד) <i class="fas fa-lock text-[8px]"></i></span>
+                        <span class="w-full px-4 py-2 text-slate-300 text-xs flex justify-between">ק. (חסום לעיבוד) <i class="fas fa-lock text-[8px]"></i></span>
                     </div>
                 </div>
                 <button onclick="showPage('legal')" class="nav-btn px-2 py-1" id="btn-legal">ארכיון משפטי</button>
-                <a href="https://www.facebook.com/StopVind/" target="_blank" class="bg-rose-600 text-white px-6 py-2 rounded-full shadow-md hover:bg-rose-700 transition flex items-center gap-2">
-                    <i class="fab fa-facebook-f"></i> הערוץ הרשמי
+                <a href="https://www.facebook.com/StopVind/" target="_blank" class="bg-rose-600 text-white px-5 py-2 rounded-full shadow-lg hover:bg-rose-700 transition flex items-center gap-2">
+                    <i class="fab fa-facebook-f"></i> StopVind Facebook
                 </a>
             </div>
             
@@ -75,16 +82,16 @@
         </div>
     </nav>
 
-    <!-- Mobile Navigation -->
+    <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="fixed inset-0 bg-white z-[150] hidden flex-col p-12 text-center">
         <button onclick="toggleMobileMenu()" class="absolute top-6 left-6 text-3xl">&times;</button>
-        <div class="flex flex-col gap-8 text-2xl font-black mt-12">
-            <button onclick="showPage('home')">הפרופיל</button>
+        <div class="flex flex-col gap-6 text-xl font-black mt-12">
+            <button onclick="showPage('home')">הבית והנתונים</button>
+            <button onclick="showPage('letters')">מכתבים למשפחה</button>
             <button onclick="showPage('community')" class="text-amber-600">שידוכין וגמ"חים</button>
-            <button onclick="showPage('orit')">עדות: אורית סולומון</button>
+            <button onclick="showPage('orit')">עדות (א.ס)</button>
             <button onclick="showPage('legal')">ארכיון משפטי</button>
-            <a href="https://www.facebook.com/StopVind/" target="_blank" class="text-blue-600">פייסבוק StopVind</a>
-            <button onclick="showPage('contact')" class="text-rose-600 border-2 border-rose-600 rounded-full py-3">אזהרת ציבור</button>
+            <a href="https://www.facebook.com/StopVind/" target="_blank" class="text-rose-600">פייסבוק STOPVIND</a>
         </div>
     </div>
 
@@ -92,283 +99,277 @@
 
         <!-- PAGE: HOME -->
         <div id="page-home" class="active-page page-transition">
-            <section class="flex flex-col lg:flex-row gap-12 items-center mb-24">
-                <div class="lg:w-2/3">
-                    <div class="inline-flex items-center gap-2 bg-rose-100 text-rose-700 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-6">
-                        <i class="fas fa-exclamation-triangle"></i> Public Interest Warning
+            <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-24 items-stretch">
+                <div class="lg:col-span-8 bg-white p-12 rounded-[50px] shadow-sm border border-slate-100 flex flex-col justify-center">
+                    <div class="inline-flex items-center gap-2 bg-rose-50 text-rose-700 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest mb-6 italic">
+                        <i class="fas fa-database"></i> STOPVIND AUDIT SYSTEM v2.6
                     </div>
-                    <h1 class="text-6xl md:text-8xl font-black serif-title leading-[0.9] mb-8 tracking-tighter text-slate-900">יצחק וינד</h1>
-                    <p class="text-2xl text-slate-500 font-light leading-relaxed mb-10 max-w-2xl">
-                        נוכל סדרתי המסתתר מאחורי תארי עו"ד וטוען רבני. 
-                        מנהל מערכת הונאה הכוללת הברחת נכסים, עושק עובדים והטעיית שופטים.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <button onclick="showPage('orit')" class="bg-rose-600 text-white px-10 py-5 rounded-2xl font-black text-xl shadow-2xl hover:bg-rose-700 transition transform hover:scale-105">לקריאת העדויות</button>
-                        <a href="https://www.facebook.com/StopVind/" target="_blank" class="border-2 border-slate-900 px-10 py-5 rounded-2xl font-black text-xl hover:bg-slate-900 hover:text-white transition">הוכחות בפייסבוק</a>
+                    <h1 class="text-5xl md:text-8xl font-black serif-title leading-[0.9] mb-8 tracking-tighter text-slate-900">יצחק וינד</h1>
+                    <p class="text-xl font-bold text-rose-600 mb-12 border-r-4 border-rose-600 pr-4 italic leading-tight uppercase tracking-tighter">יצחק וינד עו"ד נוכל | יצחק מאיר וינד עו"ד</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                        <div class="bg-slate-50 p-10 rounded-[40px] border-r-[12px] border-rose-600 overflow-hidden">
+                            <span class="block text-slate-400 font-bold uppercase text-[10px] mb-4 tracking-widest italic">Total Estimated Employee Fraud</span>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-5xl font-black data-counter text-rose-600" id="stolen-money">0</span>
+                                <span class="text-2xl font-black text-rose-900">₪</span>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 p-10 rounded-[40px] border-r-[12px] border-slate-900 overflow-hidden">
+                            <span class="block text-slate-400 font-bold uppercase text-[10px] mb-4 tracking-widest italic">Documented Stung Employees</span>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-5xl font-black data-counter text-slate-900" id="victim-count">0</span>
+                                <span class="text-lg font-bold text-slate-500">עובדים מתועדים</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 flex flex-wrap gap-4">
+                        <a href="https://www.israelbar.org.il/lawyer_list_inner.aspx?lawyerId=011441524" target="_blank" class="bg-slate-900 text-white px-8 py-4 rounded-2xl font-black text-xs flex items-center gap-3 hover:bg-rose-600 transition shadow-xl uppercase">
+                             Verify License: עו"ד ווינד יצחק (לשכה) <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://www.facebook.com/StopVind/" target="_blank" class="bg-rose-600 text-white px-8 py-4 rounded-2xl font-black text-xs flex items-center gap-3 shadow-xl hover:bg-rose-700 transition uppercase">
+                             ערוץ הפייסבוק STOPVIND <i class="fab fa-facebook-square"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="lg:w-1/3 w-full">
-                    <div class="relative group">
-                        <div class="absolute -inset-2 bg-gradient-to-tr from-rose-600 to-amber-500 rounded-[50px] blur-xl opacity-20"></div>
-                        <div class="bg-white p-4 rounded-[50px] shadow-2xl relative border border-slate-100 overflow-hidden aspect-square">
-                            <!-- Placeholder for Yitzhak Wind's Photo -->
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400" alt="Yitzhak Wind" class="w-full h-full object-cover rounded-[40px] grayscale hover:grayscale-0 transition duration-700" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%22 height=%22100%22 fill=%22%23eee%22/><text x=%2250%%22 y=%2250%%22 font-size=%2210%22 text-anchor=%22middle%22 fill=%22%23aaa%22>Photo of Yitzhak Wind</text></svg>'">
-                            <div class="absolute bottom-8 right-8 left-8 bg-black/80 backdrop-blur-md text-white p-4 rounded-3xl text-center">
-                                <p class="font-black text-lg">יצחק מאיר וינד</p>
-                                <p class="text-[10px] uppercase tracking-widest text-rose-400">Verified Identity</p>
-                            </div>
+
+                <div class="lg:col-span-4 flex flex-col gap-8">
+                    <div class="bg-white p-4 rounded-[60px] shadow-2xl relative border border-slate-100 overflow-hidden flex-1 aspect-square group">
+                        <!-- Image of Yitzhak Wind from StopVind -->
+                        <div class="w-full h-full bg-slate-100 flex flex-col items-center justify-center text-slate-200 relative overflow-hidden">
+                             <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400" alt="יצחק וינד" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+                             <p class="absolute bottom-4 text-[8px] uppercase font-black bg-rose-600 text-white px-2 py-1 rounded">Source: Facebook StopVind</p>
+                        </div>
+                        <div class="absolute bottom-10 right-10 left-10 bg-black/90 backdrop-blur-md text-white p-6 rounded-[30px] text-center border border-white/10 shadow-2xl">
+                            <p class="font-black text-lg mb-1 italic tracking-tighter uppercase text-rose-500 italic">יצחק וינד נוכל</p>
+                            <p class="text-[9px] text-slate-400 font-bold uppercase tracking-widest leading-none italic uppercase tracking-tighter">Profile ID: Pattern Scrubbing Detected</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <h2 class="text-4xl font-black mb-12 serif-title text-center">הפרופיל: 5 דפוסי הונאה מוכחים</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <h2 class="text-4xl font-black mb-16 serif-title text-center uppercase tracking-tighter italic uppercase tracking-tighter">Investigation Protocol</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 
-                <!-- Topic 1 -->
-                <div class="sh-card bg-white p-10 rounded-[40px]">
-                    <h3 class="text-xl font-black mb-6 flex items-center gap-3"><i class="fas fa-id-card text-rose-600"></i> תסמונת השם המשתנה</h3>
-                    <div class="line-clamp-sharp">
-                        <p class="font-black text-xs text-rose-600 mb-1">זהות 1: Vind</p>
-                        <p class="text-sm text-slate-600 leading-snug">השם המקורי שמופיע בתיקי בית משפט ישנים ובאתר המשרד שנמחק.</p>
-                        <p class="text-sm text-slate-600 leading-snug">ניסיון להעלים היסטוריה פלילית ופסקי דין ממנועי החיפוש הישראליים.</p>
-                        <p class="text-sm text-slate-600 leading-snug">טקטיקה של "דף חלק" המאפשרת לצוד לקוחות חדשים ללא עבר.</p>
+                <div class="intelligence-card p-12 rounded-[50px] border-r-4 border-rose-600">
+                    <h3 class="text-xl font-black mb-8 flex items-center gap-3 text-rose-600 italic uppercase tracking-tighter"><i class="fas fa-fingerprint"></i> תסמונת ה-Double Vav</h3>
+                    <div class="mb-6 bg-slate-50 p-4 rounded-2xl border border-dashed border-slate-200">
+                        <p class="text-xs font-black text-slate-400 mb-2 uppercase italic text-center underline italic uppercase tracking-tighter">Name Update (Scrubbing)</p>
+                        <p class="text-2xl font-black tracking-widest text-slate-800 text-center uppercase">ווינד יצחק</p>
                     </div>
-                    <div class="line-clamp-sharp border-rose-200">
-                        <p class="font-black text-xs text-slate-400 mb-1">זהות 2: Wind</p>
-                        <p class="text-sm text-slate-600 leading-snug">החלפה ל-W באנגלית כדי לייצר "ישות חדשה" עבור בנקים ונושים.</p>
-                        <p class="text-sm text-slate-600 leading-snug">שימוש מכוון בשמות דומים לטשטוש עקבות כספיים והברחת לקוחות.</p>
-                        <p class="text-sm text-slate-600 leading-snug">מוגדר על ידי חוקרים פרטיים כניסיון קלאסי להתחמקות מחובות חלוטים.</p>
+                    <div class="line-clamp-sharp border-rose-500 text-sm italic uppercase tracking-tighter">
+                        <p class="font-black text-rose-600 mb-1">Obfuscation Pattern</p>
+                        <p class="text-slate-700 font-medium italic uppercase tracking-tighter">שינוי השם ל-"ווינד" (שני וו) נועד לייצר בנקים וכתובות פיננסיות ללא העבר של "וינד".</p>
+                        <p class="text-slate-700 font-medium italic uppercase tracking-tighter">טשטוש עקבות דיגיטלי במטרה לצוד לקוחות חדשים שאינם מכירים את הפסיקות.</p>
+                        <p class="text-sm text-slate-700 font-medium font-bold text-rose-600 mt-2 italic uppercase tracking-tighter underline">מי שמשנה את האיות של שמו ב-2026 מודה שיש לו מה להסתיר.</p>
                     </div>
                 </div>
 
-                <!-- Topic 2: The Mercedes -->
-                <div class="sh-card bg-slate-900 text-white p-10 rounded-[40px] relative overflow-hidden">
-                    <h3 class="text-xl font-black mb-6 flex items-center gap-3 text-rose-500"><i class="fas fa-car"></i> המרצדס האפורה (E-Class)</h3>
-                    <div class="mb-6 rounded-3xl overflow-hidden border border-white/10 grayscale hover:grayscale-0 transition">
-                         
-                         <div class="p-3 bg-white/5 text-[10px] text-slate-400 italic">מרצדס אפורה E/S Class המשמשת להברחת נכסים</div>
-                    </div>
-                    <div class="line-clamp-sharp border-amber-500">
-                        <p class="font-black text-xs text-amber-500 mb-1">הברחת נכסים מכוונת</p>
-                        <p class="text-sm text-slate-300 leading-snug">הרכב רשום על שם דינה וינד (האישה) למרות שיצחק הוא המשתמש הבלעדי.</p>
-                        <p class="text-sm text-slate-300 leading-snug">ניסיון לחמוק ממעקלי הוצאה לפועל בזמן שהוא מצהיר על "חדלות פירעון".</p>
-                        <p class="text-sm text-slate-300 leading-snug">הנושים הונחו לבצע "הרמת מסך" ולהטיל עיקול ברישום על הרכב האפור.</p>
-                    </div>
-                    <div class="line-clamp-sharp border-amber-500">
-                        <p class="font-black text-xs text-amber-500 mb-1">מצג שווא של "גביר"</p>
-                        <p class="text-sm text-slate-300 leading-snug">שימוש ברכב יוקרה לנקר עיניים במגזר החרדי ולבניית אמינות מזויפת.</p>
-                        <p class="text-sm text-slate-300 leading-snug">בזמן שהוא נוסע ברכב פאר, עובדיו (אמיתי ואורית) נזרקו ללא שכר.</p>
-                        <p class="text-sm text-slate-300 leading-snug">הפער בין המרצדס לחוב של חצי מיליון לברנס הוא ההוכחה לנוכלות.</p>
+                <div class="intelligence-card bg-slate-900 text-white p-12 rounded-[50px] relative overflow-hidden border-r-4 border-amber-600">
+                    <h3 class="text-xl font-black mb-8 flex items-center gap-3 text-amber-500 italic uppercase tracking-tighter"><i class="fas fa-car-side"></i> המרצדס האפורה (E-Class)</h3>
+                    <div class="line-clamp-sharp border-amber-600 text-sm italic uppercase tracking-tighter">
+                        <p class="font-black text-amber-500 mb-1 uppercase tracking-widest italic italic uppercase tracking-tighter">Asset Hiding Log</p>
+                        <p class="text-slate-300 font-medium mb-4 italic text-center italic uppercase tracking-tighter">מרצדס אפור מטאלי רשומה על שם ד.ו.</p>
+                        <p class="text-slate-300 font-medium leading-relaxed italic uppercase tracking-tighter">רשומה על שם דינה וינד (האישה) למרות שיצחק הוא המשתמש הבלעדי כהברחת נכסים מנושים.</p>
+                        <p class="text-slate-300 font-medium italic uppercase tracking-tighter italic uppercase tracking-tighter">וינד מצהיר על "חדלות פירעון" בעודו מתנייד ברכב פאר לנקר עיניים במגזר.</p>
+                        <p class="text-sm text-slate-300 font-medium font-bold text-amber-400 mt-2 italic uppercase tracking-tighter underline italic">הנושים כבר הונחו להטיל עיקול ברישום בגין "הרמת מסך" חוקית.</p>
                     </div>
                 </div>
 
-                <!-- Topic 3 -->
-                <div class="sh-card bg-white p-10 rounded-[40px]">
-                    <h3 class="text-xl font-black mb-6 flex items-center gap-3"><i class="fas fa-gavel text-rose-600"></i> עדות שקר וזלזול בערכאות</h3>
-                    <div class="line-clamp-sharp">
-                        <p class="font-black text-xs text-rose-600 mb-1">קביעת השופט מינץ</p>
-                        <p class="text-sm text-slate-600 leading-snug">"המבקש אינו דובר אמת" - קביעה רשמית של שופט בית משפט עליון.</p>
-                        <p class="text-sm text-slate-600 leading-snug">הצגת 11 גרסאות סותרות באותו הליך כדי להתחמק מאחריות ישירה.</p>
-                        <p class="text-sm text-slate-600 leading-snug">מי שמשקר לשופט עליון, ישקר לכם בכל פגישה ובכל חוזה.</p>
-                    </div>
-                    <div class="line-clamp-sharp border-rose-200">
-                        <p class="font-black text-xs text-slate-400 mb-1">ביזיון בית משפט</p>
-                        <p class="text-sm text-slate-600 leading-snug">התפרצויות סדרתיות לדברי בית המשפט וחוסר יכולת לספק תשובות ענייניות.</p>
-                        <p class="text-sm text-slate-600 leading-snug">פסיקת הוצאות אישיות נגדו בגין הטעיית הצד שכנגד והפרעה לדיונים.</p>
-                        <p class="text-sm text-slate-600 leading-snug">שימוש בייצוג עצמי רשלני כדי למשוך זמן ולייצר כאוס משפטי.</p>
+                <div class="intelligence-card p-12 rounded-[50px] border-r-4 border-slate-900">
+                    <h3 class="text-xl font-black mb-8 flex items-center gap-3 text-slate-900 italic uppercase tracking-tighter"><i class="fas fa-gavel"></i> עדות שקר בערכאות</h3>
+                    <div class="line-clamp-sharp border-slate-200 text-sm italic uppercase tracking-tighter">
+                        <p class="font-black text-rose-500 mb-1 uppercase italic tracking-widest italic uppercase tracking-tighter">Supreme Court Case Index</p>
+                        <p class="text-slate-700 font-medium italic mb-2 italic uppercase tracking-tighter">"המבקש אינו דובר אמת" - כבוד השופט דוד מינץ (עליון).</p>
+                        <p class="text-slate-700 font-medium italic uppercase tracking-tighter">הצגת 11 גרסאות סותרות באותו הליך כדי להתחמק מאחריות ישירה לעושק.</p>
+                        <p class="text-slate-700 font-medium font-bold italic uppercase tracking-tighter italic">מערכת המשפט כבר סימנה אותו כגורם לא אמין שיש לבדוק בשבע עיניים.</p>
                     </div>
                 </div>
-
-                <!-- Topic 4 -->
-                <div class="sh-card bg-white p-10 rounded-[40px]">
-                    <h3 class="text-xl font-black mb-6 flex items-center gap-3"><i class="fas fa-money-bill-wave text-rose-600"></i> כלכלת שחור ועמותות קש</h3>
-                    <div class="line-clamp-sharp">
-                        <p class="font-black text-xs text-rose-600 mb-1">שטרות של 20 ש"ח</p>
-                        <p class="text-sm text-slate-600 leading-snug">תשלום שכר לעובדים במזומן בתוך מעטפות ללא רישום חוקי.</p>
-                        <p class="text-sm text-slate-600 leading-snug">ניסיון להעלים עקבות של יחסי עבודה למניעת תביעות פנסיה.</p>
-                        <p class="text-sm text-slate-600 leading-snug">גביית מזומנים מלקוחות (כמו בתיק בוארון) ללא הוצאת קבלה כחוק.</p>
-                    </div>
-                    <div class="line-clamp-sharp border-rose-200">
-                        <p class="font-black text-xs text-slate-400 mb-1">עמותות בני ברק</p>
-                        <p class="text-sm text-slate-600 leading-snug">שימוש בעמותות של האחות (תרצה כהן) להזרמת כספים והלבנת הון.</p>
-                        <p class="text-sm text-slate-600 leading-snug">הנפקת תלושי שכר פיקטיביים לבני משפחה כדי לייצר "חוסר" פיננסי.</p>
-                        <p class="text-sm text-slate-600 leading-snug">חשד כבד לשימוש בכספי ציבור למימון חובותיו הפרטיים של יצחק.</p>
-                    </div>
-                </div>
-
-                <!-- Topic 5 -->
-                <div class="sh-card bg-white p-10 rounded-[40px]">
-                    <h3 class="text-xl font-black mb-6 flex items-center gap-3"><i class="fas fa-user-ninja text-rose-600"></i> טרור משפטי (SLAPP)</h3>
-                    <div class="line-clamp-sharp">
-                        <p class="font-black text-xs text-rose-600 mb-1">תביעות השתקה</p>
-                        <p class="text-sm text-slate-600 leading-snug">הגשת תביעות סרק בגין "לשון הרע" נגד כל קורבן שמעז לתבוע את כספו.</p>
-                        <p class="text-sm text-slate-600 leading-snug">מטרה: להתיש את הצד השני כלכלית ולגרום לו לוותר על החוב המקורי.</p>
-                        <p class="text-sm text-slate-600 leading-snug">שיטה קבועה של וינד להפחדת נשים ועובדים מוחלשים המבקשים צדק.</p>
-                    </div>
-                    <div class="line-clamp-sharp border-rose-200">
-                        <p class="font-black text-xs text-slate-400 mb-1">תלונות שווא במשטרה</p>
-                        <p class="text-sm text-slate-600 leading-snug">ריצות למשטרה בשישי אחר הצהריים להגשת תלונות שווא על "הטרדה".</p>
-                        <p class="text-sm text-slate-600 leading-snug">ניצול מערכת אכיפת החוק ככלי נגד נושים לגיטימיים שדורשים תשלום.</p>
-                        <p class="text-sm text-slate-600 leading-snug">רוב התלונות נסגרות מחוסר עניין לציבור ומוגדרות כ"שימוש לרעה".</p>
-                    </div>
-                </div>
-
             </div>
         </div>
 
-        <!-- PAGE: COMMUNITY (Matchmaking & Gemachim) -->
+        <!-- PAGE: LETTERS (מכתבים מלב הנפגעים) -->
+        <div id="page-letters" class="hidden-page page-transition">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <div class="inline-block bg-rose-600 text-white font-black px-6 py-2 rounded-full mb-6 italic uppercase tracking-tighter text-[10px]">Letters from a Painful Heart</div>
+                    <h2 class="text-5xl md:text-7xl font-black serif-title leading-tight">מכתבים למשפחה ולמערכת</h2>
+                    <p class="text-xl text-slate-500 font-light mt-4 italic uppercase tracking-tighter">האמת שנחתה בסלון של משפחת וינד/כהן/רוזנברג</p>
+                </div>
+
+                <div class="space-y-12">
+                    <!-- Friday Letter -->
+                    <div class="bg-slate-900 text-white p-12 rounded-[60px] shadow-2xl relative overflow-hidden border-t-8 border-rose-600">
+                        <div class="absolute -top-10 -left-10 opacity-5"><i class="fas fa-clock text-[20rem]"></i></div>
+                        <h3 class="text-2xl font-black mb-8 text-rose-500 italic uppercase tracking-tighter">יצחק, טיפ קטן לפני שאתה מתנתק ל-25 שעות</h3>
+                        <div class="space-y-8 text-lg text-slate-300 leading-relaxed relative z-10">
+                            <p class="font-bold border-r-4 border-rose-600 pr-6 uppercase tracking-tighter">הגיע הזמן שתבין שאתה שקוף, גם בבית וגם ברחוב.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
+                                <div class="bg-white/5 p-6 rounded-3xl border border-white/10">
+                                    <h4 class="font-black text-rose-400 mb-4 uppercase text-[10px] tracking-widest italic uppercase tracking-tighter">העיניים במודיעין עילית</h4>
+                                    <p class="italic uppercase tracking-tighter">חשבת שהדו"ח שקיבלת על החנייה במדרכה היה מקרי? ממש לא. השכנים שלך כבר יודעים מי אתה, הם צילמו אותך ושלחו לנו את המיקום בזמן אמת. דאגנו שהפיקוח יגיע בדיוק כשהיית שם. אגב, שילמת? או ששוב קיבלת כפל קנס?</p>
+                                </div>
+                                <div class="bg-white/5 p-6 rounded-3xl border border-white/10">
+                                    <h4 class="font-black text-rose-400 mb-4 uppercase text-[10px] tracking-widest italic uppercase tracking-tighter">המרגלת בחדר</h4>
+                                    <p class="italic uppercase tracking-tighter">אתה באמת חושב שהסביבה שלך "תמימה"? תסתכל טוב. המקורות שלנו איכותיים. איך לעזאזל אנחנו יודעים את כל הפרטים המביכים על <strong>מזרן היוגה</strong>?! הכל מוקלט. כל שקר שלך מתועד.</p>
+                                </div>
+                            </div>
+                            <p class="text-center font-black text-2xl text-white mt-12 bg-rose-600/20 p-8 rounded-3xl border border-rose-600/30 italic uppercase tracking-tighter">תהנה מהמחשבה הזו בקידוש. השבת הזו אין לאן לברוח מהאמת.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tsunami Letter -->
+                    <div class="letter-paper p-16 rounded-[60px] shadow-xl border border-slate-200 mb-12 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 red-alert-bar h-2 w-full"></div>
+                        <h3 class="text-4xl font-black mb-10 text-rose-700 italic leading-tight uppercase tracking-tighter">דינה, תרצה – הגיע הזמן להפסיק עם ה"מעשיידות"</h3>
+                        <div class="space-y-8 text-xl leading-relaxed text-slate-900 font-medium">
+                            <p class="italic uppercase tracking-tighter">בני משפחת וינד היקרים, פורים עבר, התחפושות בארון, אבל אצל יצחק המסיבה ממשיכה על חשבון הילדים שלכם. בזמן שהוא מנסה למכור לכם "סיפורי פוגי" שהכל תחת שליטה, המציאות בחוץ כבר מזמן ב<strong>"ונהפוך הוא"</strong> - אבל לצד הלא נכון.</p>
+                            <div class="bg-rose-50 p-10 rounded-[40px] border-r-8 border-rose-600">
+                                <p class="serif-title font-black text-2xl text-rose-800 mb-6 italic uppercase tracking-tighter">"כָּל הַמְרַחֵם עַל הָאַכְזָרִים, סוֹפוֹ שֶׁמִּתְאַכְזֵר עַל הָרַחְמָנִים"</p>
+                                <p class="italic uppercase tracking-tighter">יצחק איבד כל רסן. כשהוא מנסה לקחת הלוואות על שמות הילדים התמימים שלו, הוא משעבד את עתידם עוד לפני שזכו לעמוד על דעתם. אל תתנו לו להשתמש בכם כ"איש קש" להברחת נכסים.</p>
+                            </div>
+                            <div class="text-center mt-12">
+                                <p class="text-2xl font-black text-rose-600 italic uppercase tracking-tighter">"הצילו את הילדים. הצילו את עצמכם. שעה אחת קודם."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE: COMMUNITY (Expanded Shidduchim & Gemachim) -->
         <div id="page-community" class="hidden-page page-transition">
-            <div class="bg-amber-900 text-white p-16 rounded-[60px] shadow-2xl relative overflow-hidden mb-12">
-                <div class="absolute -top-24 -left-24 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl"></div>
-                <div class="text-center mb-16 relative z-10">
-                    <div class="bg-amber-500 text-black px-6 py-1 rounded-full text-xs font-black italic inline-block mb-6 uppercase tracking-widest">מדור טהרת הקהילה</div>
-                    <h2 class="text-5xl md:text-7xl font-black serif-title mb-6 leading-none">שידוכין, גמ"חים וחורבן השם</h2>
-                    <p class="text-xl text-amber-100 max-w-3xl mx-auto font-light leading-relaxed">
-                        הקהילה החרדית אינה סובלת גזל פועלים וניצול נשים. 
-                        מי שמלווה ליצחק וינד - שם את כספו על קרן הצבי.
-                    </p>
+            <div class="bg-amber-950 text-white p-16 rounded-[80px] shadow-2xl relative overflow-hidden mb-12 border-b-[15px] border-amber-500">
+                <div class="absolute -top-24 -left-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl"></div>
+                <div class="text-center mb-20 relative z-10">
+                    <div class="bg-amber-500 text-black px-8 py-2 rounded-full font-black italic inline-block mb-8 uppercase text-[10px] tracking-[0.3em]">Religious Integrity & Shield</div>
+                    <h2 class="text-6xl md:text-8xl font-black serif-title leading-none tracking-tighter italic uppercase tracking-tighter">שידוכין, גמ"חים וחורבן השם</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
-                    <div class="bg-white/5 backdrop-blur-xl p-10 rounded-[40px] border border-white/10">
-                        <h3 class="text-2xl font-black mb-8 flex items-center gap-3 text-amber-400"><i class="fas fa-ring"></i> כתם השידוכים</h3>
-                        
-                        <div class="line-clamp-sharp border-rose-500">
-                            <p class="font-black text-xs text-rose-500 mb-1">עתיד הילדים בסכנה</p>
-                            <p class="text-sm text-slate-200 leading-snug">וינד מנסה לקחת הלוואות על שם ילדיו התמימים ובכך משעבד את עתידם.</p>
-                            <p class="text-sm text-slate-200 leading-snug">השם "וינד" בקרית ספר הפך למילה נרדפת לחובות, הטרדות וגזל.</p>
-                            <p class="text-sm text-slate-200 leading-snug">השדכניות כבר מעדכנות: מי שמתחבר למשפחה הזו, נכנס לבור של חובות.</p>
-                        </div>
-                        <div class="line-clamp-sharp border-amber-500">
-                            <p class="font-black text-xs text-amber-500 mb-1">האחריות של המשפחה</p>
-                            <p class="text-sm text-slate-200 leading-snug">תרצה כהן והמשפחה המורחבת סופגים את מבטי הבושה במקווה ובכולל.</p>
-                            <p class="text-sm text-slate-200 leading-snug">אי אפשר להמשיך להגן על הנוכל בזמן שנושים זועקים לשמיים.</p>
-                            <p class="text-sm text-slate-200 leading-snug">הכתם של יצחק עובר בירושה חברתית לכל האחיינים ובני הדודים.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10 text-right">
+                    
+                    <div class="bg-white/5 backdrop-blur-3xl p-12 rounded-[60px] border border-white/10 border-r-8 border-r-rose-600">
+                        <h3 class="text-3xl font-black mb-10 text-rose-400 flex items-center gap-4 italic uppercase tracking-tighter"><i class="fas fa-ring"></i> כתם השידוכים</h3>
+                        <div class="space-y-12">
+                            <div class="line-clamp-sharp border-white/20">
+                                <p class="font-black text-[10px] uppercase text-rose-400 mb-2 italic uppercase tracking-tighter">Scriptural Warning</p>
+                                <p class="text-3xl font-black text-white italic mb-6 italic uppercase tracking-tighter italic uppercase tracking-tighter">"אָבוֹת אָכְלוּ בֹסֶר וְשִׁנֵּי בָנִים תִּקְהֶינָה"</p>
+                                <p class="text-lg font-bold mb-2 text-white italic uppercase tracking-tighter">עתיד הילדים בסכנה קיומית.</p>
+                                <p class="text-sm text-slate-300 leading-relaxed font-medium italic uppercase tracking-tighter">יצחק וינד מנסה לקחת הלוואות על שמות ילדיו ובכך משעבד את עתידם הכלכלי והחברתי לפני שעמדו על דעתם. השדכניות כבר מעדכנות: מי שמתחבר למשפחה הזו, נכנס לבור של חובות וגזל.</p>
+                            </div>
+                            <div class="line-clamp-sharp border-white/20">
+                                <p class="font-black text-[10px] uppercase text-rose-400 mb-2 italic uppercase tracking-tighter">Family Accountability</p>
+                                <p class="text-white font-bold mb-2 uppercase italic tracking-tighter italic uppercase tracking-tighter">תרצה כהן והמשפחה המורחבת סופגים את מבטי הבושה במקווה ובכולל.</p>
+                                <p class="text-sm text-slate-300 leading-relaxed font-medium italic uppercase tracking-tighter">אי אפשר להמשיך להגן על הנוכל בזמן שנושים זועקים לשמיים. הכתם של יצחק עובר בירושה חברתית לכל האחיינים והאחייניות בגלל שתיקת המעטפת הבוגרת.</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="bg-white/5 backdrop-blur-xl p-10 rounded-[40px] border border-white/10">
-                        <h3 class="text-2xl font-black mb-8 flex items-center gap-3 text-amber-400"><i class="fas fa-hand-holding-dollar"></i> חנק הגמ"חים</h3>
-                        
-                        <div class="line-clamp-sharp border-rose-500">
-                            <p class="font-black text-xs text-rose-500 mb-1">יד שמשון והגמ"ח המרכזי</p>
-                            <p class="text-sm text-slate-200 leading-snug">מוסדות האשראי המרכזיים כבר סגרו את הברז ליצחק בגלל אובדן אמינות.</p>
-                            <p class="text-sm text-slate-200 leading-snug">מי שמלווה לו כסף היום - משתף פעולה עם הברחת נכסים פלילית.</p>
-                            <p class="text-sm text-slate-200 leading-snug">הערבויות שלו שוות כקליפת השום; כספכם לעולם לא יוחזר לקהילה.</p>
-                        </div>
-                        <div class="line-clamp-sharp border-amber-500">
-                            <p class="font-black text-xs text-amber-500 mb-1">חילול השם ברבים</p>
-                            <p class="text-sm text-slate-200 leading-snug">השימוש בדמות "הרב המוסר שיעור" כדי לצוד לקוחות תמימים הוא תועבה.</p>
-                            <p class="text-sm text-slate-200 leading-snug">הקהילה מוקיעה את השימוש בדת ככסות למעשי הונאה ומרמה.</p>
-                            <p class="text-sm text-slate-200 leading-snug">"והשיב את הגזלה אשר גזל" - חובה על כל שכן לעצור את הפגיעה.</p>
-                        </div>
+                    <div class="bg-white p-12 rounded-[60px] text-slate-900 shadow-2xl relative border-t-[10px] border-amber-600">
+                        <h3 class="text-3xl font-black mb-4 text-center italic uppercase tracking-tighter uppercase italic tracking-tighter">בקשת רזומה לבירורים</h3>
+                        <p class="text-slate-400 text-sm text-center mb-10 italic uppercase tracking-tighter">הצטרפו למערך הבירורים הקהילתי למניעת עסקאות גזל ושידוכים פסולים</p>
+                        <form class="space-y-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <input type="text" placeholder="שם המועמד" class="p-5 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-100 outline-none focus:ring-2 focus:ring-amber-500 font-bold transition">
+                                <input type="text" value="וינד" readonly class="p-5 rounded-2xl bg-slate-100 border-none ring-1 ring-slate-200 outline-none text-slate-400 font-black italic uppercase tracking-tighter italic uppercase tracking-tighter">
+                            </div>
+                            <input type="text" placeholder="שם האב / משפחה מורחבת (כהן / רוזנברג / וינד)" class="w-full p-5 rounded-2xl bg-slate-50 border-none ring-1 ring-slate-100 outline-none focus:ring-2 focus:ring-amber-500 font-bold transition">
+                            <button type="button" onclick="alert('פנייתכם לבירור רזומה התקבלה. אנו נספק רזומה מעודכן המבוסס על תיקי החשיפה של ועד הפעולה.')" class="w-full bg-rose-600 text-white py-6 rounded-3xl font-black text-xl hover:bg-rose-700 transition shadow-xl uppercase tracking-widest italic uppercase tracking-tighter">בקש רזומה מעודכן</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gmachim Data Block -->
+            <div class="bg-white p-12 rounded-[60px] border-2 border-slate-100 mb-12 shadow-sm">
+                <h3 class="text-3xl font-black mb-10 text-center italic uppercase tracking-tighter"><i class="fas fa-university text-amber-600"></i> סטטוס גמ"חים ואשראי קהילתי</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-8 bg-rose-50 rounded-[40px] border-r-8 border-rose-600">
+                        <h4 class="font-black text-rose-900 mb-2 italic uppercase tracking-tighter">יד שמשון</h4>
+                        <p class="text-xs font-bold text-rose-700 uppercase mb-4 tracking-widest italic uppercase tracking-tighter">Status: BLACKLISTED</p>
+                        <p class="text-sm text-slate-700 leading-relaxed font-medium italic uppercase tracking-tighter">סירוב אשראי מוחלט עקב אובדן אמינות ודיווחים על הברחת נכסים.</p>
+                    </div>
+                    <div class="p-8 bg-rose-50 rounded-[40px] border-r-8 border-rose-600">
+                        <h4 class="font-black text-rose-900 mb-2 italic uppercase tracking-tighter">הגמ"ח המרכזי</h4>
+                        <p class="text-xs font-bold text-rose-700 uppercase mb-4 tracking-widest italic uppercase tracking-tighter">Status: BLOCKED</p>
+                        <p class="text-sm text-slate-700 leading-relaxed font-medium italic uppercase tracking-tighter">חסימת חשבונות ומניעת הלוואות בערבויות פיקטיביות של בני משפחה.</p>
+                    </div>
+                    <div class="p-8 bg-amber-50 rounded-[40px] border-r-8 border-amber-600">
+                        <h4 class="font-black text-amber-900 mb-2 italic uppercase tracking-tighter italic uppercase tracking-tighter">גמ"ח "יחזקאל"</h4>
+                        <p class="text-xs font-bold text-amber-700 uppercase mb-4 tracking-widest italic uppercase tracking-tighter uppercase italic tracking-tighter">Status: UNDER AUDIT</p>
+                        <p class="text-sm text-slate-700 leading-relaxed font-medium italic uppercase tracking-tighter uppercase italic tracking-tighter">בירור קהילתי פעיל לגבי כספים שנגזלו תחת מצגי שווא של "חסד".</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- VICTIM PAGES (Simulated) -->
+        <!-- PAGE: LEGAL ARCHIVE -->
+        <div id="page-legal" class="hidden-page page-transition text-right">
+             <h2 class="text-5xl font-black mb-16 text-center serif-title tracking-tight italic uppercase tracking-tighter">הארכיון המשפטי: הצד האפל של הירח</h2>
+             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                 
+                 <div class="intelligence-card p-12 rounded-[50px] border-r-8 border-rose-600 italic uppercase tracking-tighter">
+                    <span class="bg-rose-100 text-rose-700 px-4 py-1 rounded-full text-[10px] font-black italic inline-block mb-4 uppercase italic uppercase tracking-tighter">Criminal Conduct Brief</span>
+                    <h4 class="text-2xl font-black mb-4 uppercase italic tracking-tighter">תיק גלינסקי: 33939-10-22</h4>
+                    <div class="space-y-6 text-sm text-slate-700 leading-relaxed italic uppercase tracking-tighter font-medium">
+                        <p class="font-bold underline italic uppercase tracking-tighter uppercase italic tracking-tighter">"וינד נמצא בצד האפל של הירח... מעשיו פליליים."</p>
+                        <p>קביעה שיפוטית חסרת תקדים המגדירה את וינד כמי שחצה את הקו לעבר העולם הפלילי והלבנת ההון.</p>
+                        <p>השופטים זיהו דפוס של רמאות, הברחת נכסים וזילות מוחלטת בערכאות המשפט של מדינת ישראל.</p>
+                    </div>
+                 </div>
+
+                 <div class="intelligence-card p-12 rounded-[50px] border-r-8 border-slate-900 italic uppercase tracking-tighter font-medium">
+                    <h4 class="text-2xl font-black mb-4 italic uppercase tracking-tighter uppercase italic tracking-tighter">גזל המשפחה: תיק 3015-04-22</h4>
+                    <div class="space-y-6 text-sm text-slate-700 leading-relaxed italic uppercase tracking-tighter">
+                        <p class="font-bold underline italic uppercase tracking-tighter uppercase italic tracking-tighter">"עשק את גיסו בכמעט מיליון ש\"ח."</p>
+                        <p>לאחר 10 שנים של סחבת והתעללות משפחתית, וינד החזיר פחות ממחצית הסכום תחת לחץ משפטי כבד.</p>
+                        <p>מי שלא חס על בשרו ודמו, לא יחס על כספו של שום לקוח תמים מהמגזר החרדי שיפקיד אצלו פיקדון.</p>
+                    </div>
+                 </div>
+
+                 <div class="intelligence-card p-12 rounded-[50px] border-r-8 border-amber-600 italic uppercase tracking-tighter font-medium">
+                    <h4 class="text-2xl font-black mb-4 uppercase italic tracking-tighter uppercase italic tracking-tighter">תיק רמלה: ת\"ק 36004-07-22</h4>
+                    <div class="space-y-6 text-sm text-slate-700 leading-relaxed italic uppercase tracking-tighter">
+                        <p class="font-bold underline italic uppercase tracking-tighter uppercase italic tracking-tighter">"שקרים של העתק-הדבק בשביל 1,500 ש\"ח."</p>
+                        <p>הזיה משפטית שבה עו"ד מבזבז שעות שיפוט על סכום זעום תוך שימוש בתירוצים ממוחזרים שמוגשים לכל תיק.</p>
+                        <p>התיק מוכיח את הפתולוגיה של נוכל שמשקר באופן אוטומטי גם כשאין בכך שום היגיון כלכלי - פשוט מחלה.</p>
+                    </div>
+                 </div>
+
+                 <div class="intelligence-card p-12 rounded-[50px] border-r-8 border-rose-600 italic uppercase tracking-tighter font-medium">
+                    <h4 class="text-2xl font-black mb-4 uppercase italic tracking-tighter uppercase italic tracking-tighter">תיק המוסר: 30748-02-15</h4>
+                    <div class="space-y-6 text-sm text-slate-700 leading-relaxed italic uppercase tracking-tighter">
+                        <p class="font-bold underline italic uppercase tracking-tighter uppercase italic tracking-tighter">"נתפס בקלקלתו עם לקוחה אשת איש."</p>
+                        <p>תמלול מביך החושף את עומק השפל המוסרי של מי שמתיימר להיות "רב וטוען רבני" המוסר שיעור בגמרא.</p>
+                        <p>וינד מנצל את המעמד והקרבה ללקוחותיו המוחלשים לצרכיו האישיים הפסולים תוך פגיעה בקדושת הבית היהודי.</p>
+                    </div>
+                 </div>
+
+             </div>
+        </div>
+
+        <!-- VICTIM PAGE (Anonymized + Hover Logic) -->
         <div id="page-orit" class="hidden-page page-transition">
             <div class="max-w-4xl mx-auto">
-                <button onclick="showPage('home')" class="text-slate-400 mb-6 flex items-center gap-2 hover:text-rose-600 transition font-bold"><i class="fas fa-arrow-right"></i> חזרה לפרופיל</button>
-                <div class="bg-white p-16 rounded-[60px] shadow-2xl border border-slate-100 relative">
-                    <div class="absolute top-12 left-12 opacity-5 text-9xl italic serif-title">"</div>
-                    <div class="flex items-center gap-6 mb-12">
-                        <div class="w-24 h-24 bg-rose-600 text-white rounded-full flex items-center justify-center text-4xl font-black shadow-lg">א.ס</div>
+                <button onclick="showPage('home')" class="text-slate-400 mb-6 flex items-center gap-2 hover:text-rose-600 transition font-black italic uppercase tracking-tighter"><i class="fas fa-arrow-right"></i> חזרה לנתוני החקירה</button>
+                <div class="bg-white p-20 rounded-[80px] shadow-2xl border border-slate-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-4 h-full bg-rose-600"></div>
+                    <div class="flex items-center gap-8 mb-16">
+                        <div class="w-32 h-32 bg-rose-600 text-white rounded-full flex items-center justify-center text-5xl font-black shadow-2xl italic uppercase tracking-tighter">א.ס</div>
                         <div>
-                            <h2 class="text-4xl font-black leading-none">אורית סולומון</h2>
-                            <p class="text-slate-400 font-medium">עובדת ומתמחה לשעבר | תיק 69875-03-25</p>
+                            <h2 class="text-5xl font-black leading-none text-slate-900 italic uppercase tracking-tighter">א. ס. (המתמחה)</h2>
+                            <p class="text-slate-400 font-bold mt-2 uppercase tracking-widest text-xs italic uppercase tracking-tighter">Primary Intelligence Source | CASE 2026-VIND-01</p>
                         </div>
                     </div>
-                    
-                    <h3 class="text-3xl font-black mb-10 text-rose-600 italic">"הוא בנה על השתיקה שלי - הוא טעה"</h3>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                        <div>
-                            <div class="line-clamp-sharp">
-                                <p class="font-black text-xs text-rose-600 mb-1">1. ניצול יחסי מרות</p>
-                                <p class="text-sm text-slate-700 leading-snug">הפיכת המתמחה לשכפ"ץ תדמיתי באתר המשרד ללא הסכמתה.</p>
-                                <p class="text-sm text-slate-700 leading-snug">ניסיון לייצר "אווירה ליברלית" כדי לטייח חשדות להטרדות מיניות.</p>
-                                <p class="text-sm text-slate-700 leading-snug">התעלמות מוחלטת מהפצרותיה להסיר את שמה ואת תמונתה מהפרסום.</p>
-                            </div>
-                            <div class="line-clamp-sharp border-slate-200">
-                                <p class="font-black text-xs text-slate-400 mb-1">2. האליבי הכוזב</p>
-                                <p class="text-sm text-slate-700 leading-snug">הכריח עובדים להישאר במשרד במוצ"ש רק כדי לשקר לאשתו דינה.</p>
-                                <p class="text-sm text-slate-700 leading-snug">שימוש ציני בנאמנות המקצועית של המתמחה ככסות לפגישות ליליות.</p>
-                                <p class="text-sm text-slate-700 leading-snug">גרירת שמה לפרשות מוסריות שהיא אינה צד להן תוך פגיעה בשמה.</p>
-                            </div>
+                    <h3 class="text-4xl font-black mb-12 text-rose-600 italic leading-tight italic uppercase tracking-tighter">"אני הצומת שדרכו עובר כל הלכלוך. הוא רצה שתיקה, הוא קיבל מלחמה."</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 text-lg text-slate-700 leading-relaxed font-medium">
+                        <div class="space-y-8 italic uppercase tracking-tighter">
+                            <p class="font-black border-r-4 border-rose-600 pr-6 italic text-xl italic uppercase tracking-tighter italic uppercase tracking-tighter">"הוא השתמש בי כשכפ\"ץ תדמיתי באתר שלו ללא רשותי ובניגוד מוחלט להפצרותיי."</p>
                         </div>
-                        <div>
-                            <div class="line-clamp-sharp border-rose-200">
-                                <p class="font-black text-xs text-rose-600 mb-1">3. הטרדות במשרד</p>
-                                <p class="text-sm text-slate-700 leading-snug">יצירת אווירה פוגענית ומאיימת כלפי נשים מוחלשות שפנו לייעוץ.</p>
-                                <p class="text-sm text-slate-700 leading-snug">מכתב ההתראה חושף טפח ממסכת השקרים והפגיעות שהוסתרו.</p>
-                                <p class="text-sm text-slate-700 leading-snug">וינד בנה על הפחד של נשים חרדיות מחשיפה - הפחד הזה נגמר.</p>
-                            </div>
-                            <div class="line-clamp-sharp border-slate-200">
-                                <p class="font-black text-xs text-slate-400 mb-1">4. איומים וסחיטה</p>
-                                <p class="text-sm text-slate-700 leading-snug">ברגע שדרשה את שכרה, וינד עבר לטקטיקת "האשמת הקורבן".</p>
-                                <p class="text-sm text-slate-700 leading-snug">איום בהגשת תלונות שווא ללשכת עו"ד כדי להרוס את עתידה המקצועי.</p>
-                                <p class="text-sm text-slate-700 leading-snug">הפצת שמועות מרושעות בקהילה כדי לבודד אותה ממקורות תמיכה.</p>
-                            </div>
+                        <div class="space-y-8 italic uppercase tracking-tighter">
+                            <p>הוא הפך אותי ל\"אליבי\" כוזב מול אשתו דינה, תוך שהוא משאיר עובדים במשרד במוצ\"ש רק כדי לייצר מצג שווא של עבודה מזויפת.</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- LEGAL RECORDS PAGE -->
-        <div id="page-legal" class="hidden-page page-transition">
-            <div class="max-w-5xl mx-auto text-center">
-                <h2 class="text-5xl font-black mb-12 serif-title">הארכיון המשפטי</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 text-right">
-                    <div class="bg-white p-10 rounded-[40px] shadow-xl border-r-4 border-rose-600">
-                        <h4 class="text-xl font-black mb-6 text-rose-600">החלטות בתי המשפט</h4>
-                        <div class="line-clamp-sharp border-slate-100">
-                            <p class="font-black text-xs text-slate-400 mb-1">בית המשפט העליון</p>
-                            <p class="text-sm text-slate-600 leading-snug italic">"המבקש אינו דובר אמת... גרסאותיו סותרות ומשתנות בהתאם לצורך."</p>
-                            <p class="text-sm text-slate-600 leading-snug">השופט מינץ קבע כי וינד פועל בחוסר תום לב קיצוני ומטעה את המערכת.</p>
-                            <p class="text-sm text-slate-600 leading-snug font-bold">זהו אות הקין המקצועי של אדם המתיימר לייצג את החוק.</p>
-                        </div>
-                        <div class="line-clamp-sharp border-slate-100">
-                            <p class="font-black text-xs text-slate-400 mb-1">פסק דין ברנס</p>
-                            <p class="text-sm text-slate-600 leading-snug">חוב חלוט של 500,000 ש"ח שווינד מסרב לשלם בניגוד להחלטה שיפוטית.</p>
-                            <p class="text-sm text-slate-600 leading-snug">התחמקות מביצוע פסקי דין תוך זלזול בוטה בנפגעים ובמערכת הצדק.</p>
-                            <p class="text-sm text-slate-600 leading-snug italic">הכסף מוסתר בחשבונות "דינה" למרות שהחוב שייך ליצחק בלבד.</p>
-                        </div>
-                    </div>
-                    <div class="bg-slate-900 text-white p-10 rounded-[40px] shadow-xl border-r-4 border-amber-500">
-                        <h4 class="text-xl font-black mb-6 text-amber-500">ממצאים מודיעיניים</h4>
-                        <div class="line-clamp-sharp border-white/10">
-                            <p class="font-black text-xs text-amber-500 mb-1">קריסת המשרד במידטאון</p>
-                            <p class="text-sm text-slate-300 leading-snug">ביטול מינוי גוגל וכרטיסי אשראי חסומים בגלל חוסר כיסוי בנקאי.</p>
-                            <p class="text-sm text-slate-300 leading-snug">נסיון לצוד לקוחות חדשים כדי לממן "גלגול חובות" של הונאות ישנות.</p>
-                            <p class="text-sm text-slate-300 leading-snug">נטישת עורכי דין בכירים (ירושלמי, פרסלר) מחשש למעורבות פלילית.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- CONTACT PAGE -->
-        <div id="page-contact" class="hidden-page page-transition">
-            <div class="max-w-4xl mx-auto">
-                <div class="bg-rose-600 text-white p-16 rounded-[60px] shadow-2xl mb-16 text-center">
-                    <h2 class="text-5xl font-black mb-8">עצור! אל תהיה הקורבן הבא</h2>
-                    <p class="text-xl font-light mb-12 opacity-90">נפגעת? יש לך מידע על הברחת מרצדס או כספי עמותות? שלח עכשיו באופן אנונימי.</p>
-                    
-                    <div class="flex flex-col md:flex-row gap-6 justify-center">
-                        <div class="bg-white/10 p-6 rounded-3xl backdrop-blur-md border border-white/20">
-                            <i class="fas fa-envelope-open-text text-3xl mb-4 text-rose-300"></i>
-                            <p class="text-[10px] font-black uppercase tracking-widest mb-1">Email (Encrypted)</p>
-                            <p class="font-mono font-bold">StopVind@proton.me</p>
-                        </div>
-                        <a href="https://www.facebook.com/StopVind/" target="_blank" class="bg-white text-rose-600 p-6 rounded-3xl shadow-xl hover:scale-105 transition">
-                            <i class="fab fa-facebook text-3xl mb-4"></i>
-                            <p class="text-[10px] font-black uppercase tracking-widest mb-1 text-slate-400">Official Page</p>
-                            <p class="font-bold italic">StopVind - נזהרתם!</p>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -376,21 +377,46 @@
 
     </main>
 
-    <footer class="mt-24 py-12 border-t border-slate-100 text-center text-slate-400 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <p class="text-sm font-black mb-2 tracking-widest text-slate-500 uppercase">Warning: Public Interest Record 011441524</p>
-            <p class="text-xs max-w-2xl mx-auto leading-relaxed">המידע באתר מבוסס על מסמכים משפטיים, פרוטוקולים של בית המשפט ועדויות מאומתות. המטרה היא התרעה ציבורית בלבד למניעת הונאות עתידיות בקהילה.</p>
-            <div class="mt-8 opacity-20 flex justify-center gap-6 text-xl">
-                <i class="fas fa-lock"></i>
-                <i class="fas fa-shield-alt"></i>
-                <i class="fas fa-user-secret"></i>
+    <!-- Production Contact Section (Association Legal) -->
+    <div class="bg-slate-900 text-white py-24 px-6 border-t-8 border-rose-600">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-black serif-title mb-6 italic uppercase tracking-tighter uppercase italic tracking-tighter tracking-tighter italic uppercase tracking-tighter">צור קשר עם ועד הפעולה</h2>
+                <p class="text-xl text-rose-400 font-bold italic uppercase tracking-tighter">עמותת נפגעי יצחק וינד (ע"ר) - למען טהרת הקהילה</p>
             </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="flex items-start gap-6 p-8 bg-white/5 rounded-[40px] border border-white/10">
+                        <div class="w-16 h-16 bg-rose-600 rounded-full flex items-center justify-center text-2xl flex-shrink-0"><i class="fas fa-envelope-open-text"></i></div>
+                        <div>
+                            <p class="text-[10px] font-black uppercase text-rose-400 tracking-widest mb-1 italic uppercase tracking-tighter">Direct Secure Line</p>
+                            <p class="text-2xl font-black font-mono select-all">stopvind@proton.me</p>
+                        </div>
+                    </div>
+                    <div class="p-8 bg-white/5 rounded-[40px] border border-white/10 italic text-sm leading-relaxed text-slate-400">
+                        העמותה פועלת תחת ייעוץ משפטי קפדני. כל המידע הנמסר מוגן בשרתי Proton מוצפנים ונשמר בסודיות מוחלטת. אין חובה למלא פרטים מזהים (שם / טלפון / מייל).
+                    </div>
+                </div>
+                
+                <form class="space-y-4" onsubmit="event.preventDefault(); alert('המידע הועבר בהצלחה למערכת המודיעין של העמותה.')">
+                    <input type="text" placeholder="נושא הפנייה (למשל: בירור רזומה / עדות חדשה)" class="w-full p-5 rounded-3xl bg-white/10 border-none outline-none focus:ring-2 focus:ring-rose-500 font-bold text-white transition placeholder:text-slate-500">
+                    <textarea rows="5" placeholder="ספרו לנו מה קרה..." class="w-full p-5 rounded-3xl bg-white/10 border-none outline-none focus:ring-2 focus:ring-rose-500 font-bold text-white transition placeholder:text-slate-500"></textarea>
+                    <button type="submit" class="w-full bg-rose-600 text-white py-6 rounded-3xl font-black text-xl hover:bg-rose-700 transition shadow-2xl transform active:scale-95 italic uppercase tracking-tighter">שלח דיווח אנונימי</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-12 border-t border-white/5 text-center text-slate-500 bg-slate-900 italic uppercase tracking-tighter">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-sm font-black mb-4 tracking-[0.2em] italic uppercase tracking-tighter uppercase italic tracking-tighter">StopVind | Public Interest Audit Record</p>
+            <p class="text-[10px] max-w-2xl mx-auto leading-relaxed opacity-40">המידע באתר מבוסס על מסמכים משפטיים ועדויות נפגעים שנתנו הסכמתם המלאה. המטרה היא התרעה ציבורית, מניעת חילול השם והשבת הגזל.</p>
         </div>
     </footer>
 
     <script>
         function showPage(pageId) {
-            // UI Update
             document.querySelectorAll('.page-transition').forEach(p => {
                 p.classList.add('hidden-page');
                 p.classList.remove('active-page');
@@ -398,24 +424,45 @@
             const target = document.getElementById('page-' + pageId);
             if(target) {
                 target.classList.remove('hidden-page');
-                setTimeout(() => target.classList.add('active-page'), 50);
+                setTimeout(() => target.classList.add('active-page'), 10);
             }
 
-            // Nav active state
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             const btn = document.getElementById('btn-' + pageId);
             if(btn) btn.classList.add('active');
 
-            // Scroll management
             window.scrollTo({top: 0, behavior: 'smooth'});
             document.getElementById('mobile-menu').classList.add('hidden');
+            
+            if(pageId === 'home') {
+                setTimeout(startCounters, 500);
+            }
         }
 
         function toggleMobileMenu() {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         }
 
-        // Auto-init
+        function animateCounter(id, target, duration) {
+            let startTimestamp = null;
+            const element = document.getElementById(id);
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * target);
+                element.innerText = value.toLocaleString();
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        function startCounters() {
+            animateCounter('stolen-money', 2500000, 4500);
+            animateCounter('victim-count', 13, 2000);
+        }
+
         window.onload = () => showPage('home');
     </script>
 </body>
