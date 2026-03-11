@@ -181,6 +181,36 @@
     </style> 
     <script data-goatcounter="https://stopvind.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
+<!-- Analytics Beacon -->
+<script>
+  (function() {
+    const START = Date.now();
+    let maxScroll = 0;
+
+    // מעקב scroll depth
+    window.addEventListener('scroll', function() {
+      const pct = Math.round(
+        (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100
+      );
+      if (pct > maxScroll) maxScroll = pct;
+    }, { passive: true });
+
+    // שליחה ביציאה מהעמוד
+    window.addEventListener('pagehide', function() {
+      navigator.sendBeacon(
+        'https://analytics-collect.stopvind.workers.dev',
+        JSON.stringify({
+          site:     'stopvind',
+          page:     window.location.pathname,
+          referrer: document.referrer,
+          lang:     document.documentElement.lang || 'he',
+          dwell:    Date.now() - START,
+          scroll:   maxScroll
+        })
+      );
+    });
+  })();
+</script>
 
 </head>
 <body class="text-slate-900 selection:bg-rose-100">
