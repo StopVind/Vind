@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StopVind | דוח המודיעין: יצחק וינד - נזהרתם!</title>
@@ -55,12 +53,10 @@
         .data-counter { font-family: 'Heebo', sans-serif; font-weight: 900; }
         .intelligence-card { border: 1px solid #e2e8f0; background: white; transition: all 0.2s ease; opacity: 1 !important; }
         .sh-card-active:hover { border-color: var(--rose); transform: translateY(-4px); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1); }
-        /* ✅ שמור texture מקורי */
         .letter-paper { background: #fff url('https://www.transparenttextures.com/patterns/lined-paper-2.png'); border-radius: 40px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
         .red-alert-bar { background: repeating-linear-gradient(45deg, #991b1b, #991b1b 10px, #7f1d1d 10px, #7f1d1d 20px); }
         .facebook-red { color: #e11d48 !important; border: 2px solid #e11d48; border-radius: 9999px; padding: 0.5rem 1.5rem; transition: all 0.3s; }
         .facebook-red:hover { background: #e11d48; color: white !important; }
-        /* ✅ חדש: Share bar */
         .share-bar { background: #1e293b; box-shadow: 0 4px 12px rgba(0,0,0,0.25); }
         .share-label { display: inline; }
         @media (max-width: 480px) {
@@ -69,108 +65,49 @@
         }
         .share-btn { transition: all 0.2s; font-size: 11px; font-weight: 900; padding: 6px 14px; border-radius: 9999px; display: inline-flex; align-items: center; gap: 6px; }
         .share-btn:hover { transform: scale(1.06); }
-        /* ✅ חדש: doc link cards בארכיון */
         .doc-link-card { border: 2px dashed #cbd5e1; border-radius: 16px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; transition: all 0.2s; text-decoration: none; color: inherit; margin-top: 8px; }
         .doc-link-card:hover { border-color: #e11d48; background: #fff1f2; }
-        /* ✅ חדש: reality vs claim table */
         .reality-row { display: grid; grid-template-columns: 1fr auto 1fr; gap: 0; align-items: center; }
 
-        /* ===== MODAL / OVERLAY ===== */
         .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.92);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.25s ease, visibility 0.25s ease;
+            position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 9999;
+            display: flex; align-items: center; justify-content: center; padding: 1rem;
+            opacity: 0; visibility: hidden; transition: opacity 0.25s ease, visibility 0.25s ease;
         }
-        .modal-overlay.modal-open {
-            opacity: 1;
-            visibility: visible;
-        }
+        .modal-overlay.modal-open { opacity: 1; visibility: visible; }
         .modal-inner {
-            transform: translateY(20px) scale(0.97);
-            transition: transform 0.25s ease;
-            max-height: 90vh;
-            overflow-y: auto;
-            width: 100%;
-            max-width: 720px;
-            border-radius: 2rem;
+            transform: translateY(20px) scale(0.97); transition: transform 0.25s ease;
+            max-height: 90vh; overflow-y: auto; width: 100%; max-width: 720px; border-radius: 2rem;
         }
-        .modal-overlay.modal-open .modal-inner {
-            transform: translateY(0) scale(1);
-        }
-        /* lightbox fix */
+        .modal-overlay.modal-open .modal-inner { transform: translateY(0) scale(1); }
         .lightbox-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.96);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.2s ease, visibility 0.2s ease;
+            position: fixed; inset: 0; background: rgba(0,0,0,0.96); z-index: 9999;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease;
         }
-        .lightbox-overlay.lb-open {
-            opacity: 1;
-            visibility: visible;
-        }
+        .lightbox-overlay.lb-open { opacity: 1; visibility: visible; }
 
-        /* ===== MOBILE FIXES ===== */
         @media (max-width: 768px) {
-            /* Share bar — scrollable on mobile */
             .share-bar { overflow-x: auto; white-space: nowrap; }
             .share-bar > div { display: flex; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
-
-            /* Hero heading smaller on mobile */
             h1.text-5xl { font-size: 3rem !important; }
-
-            /* Intelligence cards — full padding on mobile */
             .intelligence-card.p-12 { padding: 2rem !important; }
-
-            /* Reality grid — stack on mobile */
             .grid.grid-cols-3 { grid-template-columns: 1fr !important; }
             .grid.grid-cols-3 > div:nth-child(2) { display: none; }
-
-            /* Victim cards padding */
             .rounded-\[60px\] { border-radius: 2rem !important; }
             .rounded-\[50px\] { border-radius: 1.5rem !important; }
             .rounded-\[80px\] { border-radius: 2rem !important; }
-
-            /* Contact form full width */
             .grid.grid-cols-1.md\:grid-cols-2 { grid-template-columns: 1fr !important; }
-
-            /* Photo box height on mobile — no grayscale on touch */
             #subject-photo { max-height: 300px; object-fit: cover; object-position: center 15%; filter: grayscale(0) !important; }
-
-            /* Nav buttons — readable */
             .nav-btn { font-size: 12px !important; padding: 10px 6px !important; min-height: 44px; display: inline-flex; align-items: center; }
-
-            /* Page padding */
             main.max-w-7xl { padding-left: 1rem !important; padding-right: 1rem !important; }
-
-            /* Hero section stack properly */
             .lg\:col-span-8 { padding: 1.5rem !important; }
             .lg\:col-span-4 { min-height: 280px !important; }
-
-            /* Community page huge title */
             .text-6xl, .text-8xl { font-size: 2.5rem !important; }
-
-            /* Legal grid */
             .grid.grid-cols-1.lg\:grid-cols-2 { gap: 1.5rem !important; }
-
-            /* CTA buttons — touch friendly */
             .flex.flex-wrap.gap-4 { gap: 0.5rem !important; }
             .flex.flex-wrap.gap-4 > * { font-size: 13px !important; padding: 0.75rem 1.25rem !important; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
         }
-
         @media (max-width: 480px) {
             h1 { font-size: 2.5rem !important; }
             .text-5xl { font-size: 2rem !important; }
@@ -178,9 +115,11 @@
             .p-16 { padding: 1.5rem !important; }
             .rounded-\[60px\] { border-radius: 1.25rem !important; }
         }
-    </style> 
+    </style>
+
     <script data-goatcounter="https://stopvind.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
+
 <!-- Analytics Beacon -->
 <script>
 (function() {
@@ -188,6 +127,7 @@
   let maxScroll = 0, clicks = 0, moves = 0, keys = 0;
   let totalBlur = 0, blurStart = 0, tabFocus = true;
   let rage = 0, lastClick = 0, lastX = 0, lastY = 0;
+  let sent = false;
   const nav  = window.navigator || {};
   const conn = nav.connection || nav.mozConnection || nav.webkitConnection || {};
   const perf = window.performance || {};
@@ -196,12 +136,10 @@
   function setCookie(k, v, days) { document.cookie = k + '=' + encodeURIComponent(v) + ';expires=' + new Date(Date.now() + days*864e5).toUTCString() + ';path=/;SameSite=Lax'; }
 
   function persistentId() {
-    const k = '_aid';
-    let v = getCookie(k);
+    const k = '_aid'; let v = getCookie(k);
     if (!v) { try { v = localStorage.getItem(k); } catch(e) {} }
     if (!v) { v = Math.random().toString(36).slice(2,10) + '-' + Date.now().toString(36); }
-    setCookie(k, v, 365);
-    try { localStorage.setItem(k, v); } catch(e) {}
+    setCookie(k, v, 365); try { localStorage.setItem(k, v); } catch(e) {}
     return v;
   }
   function sessionId() { const k = '_sid'; let v = getCookie(k); if (!v) { v = Math.random().toString(36).slice(2) + Date.now().toString(36); setCookie(k, v, 1); } return v; }
@@ -330,7 +268,18 @@
   document.addEventListener('click', () => { clicks++; const n=Date.now(); if(n-lastClick<600)rage++; lastClick=n; });
   document.addEventListener('mousemove', e => { moves++; lastX=Math.round(e.clientX/window.innerWidth*100); lastY=Math.round(e.clientY/window.innerHeight*100); }, {passive:true});
   document.addEventListener('keydown', () => keys++, {passive:true});
-  document.addEventListener('visibilitychange', () => { if(document.hidden){tabFocus=false;blurStart=Date.now();}else{totalBlur+=Date.now()-blurStart;tabFocus=true;} });
+
+  // ✅ Merged: blur tracking + beacon trigger
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      tabFocus = false;
+      blurStart = Date.now();
+      if (!sent) { sent = true; triggerSend(); }
+    } else {
+      totalBlur += Date.now() - blurStart;
+      tabFocus = true;
+    }
+  });
 
   function send(extra) {
     const dwell = Date.now() - T0;
@@ -375,7 +324,7 @@
     );
   }
 
-  window.addEventListener('pagehide', function() {
+  function triggerSend() {
     detectAdblock(function(ab) {
       Promise.all([
         batteryInfo(),
@@ -389,11 +338,13 @@
         send({bat,media,storage,audio_fp:afp,fonts,plugins,adblock:ab,incognito});
       }).catch(() => send({adblock:ab}));
     });
-  });
+  }
+
+  // ✅ pagehide as fallback (desktop close/navigate)
+  window.addEventListener('pagehide', function() { if (!sent) { sent = true; triggerSend(); } });
 
 })();
 </script>
-
 </head>
 <body class="text-slate-900 selection:bg-rose-100">
 
